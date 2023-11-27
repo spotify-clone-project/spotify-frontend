@@ -1,47 +1,43 @@
 import React, { useState } from 'react';
 import style from '../css/Login.css';
 import { useNavigate } from 'react-router-dom'; 
+import Api from '../Api'
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  // useNavigate를 사용하여 네비게이션 함수를 가져옵니다.
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
+      // Axios의 post 메소드를 사용하여 로그인 요청을 보냅니다.
+      const response = await Api.post('/auth/login', {
+        email,
+        password,
       });
 
-      if (response.ok) {
-        const data = await response.json();
-        const accessToken = data.accessToken;
-        const refreshToken = data.refreshToken;
-        localStorage.setItem('accessToken', accessToken);
-        localStorage.setItem('refreshToken', refreshToken);
-        
-        // 로그인 성공 후 navigate를 사용하여 경로 이동
-        // navigate('/dashboard'); // 대시보드 페이지로 이동
-        console.log(data);
-      } else {
-        const errorData = await response.json();
-        setErrorMessage(errorData.message || '로그인에 실패하였습니다.');
-      }
+      // Axios의 응답은 자동으로 JSON 형태로 파싱됩니다.
+      const { accessToken, refreshToken } = response.data;
+      localStorage.setItem('accessToken', accessToken);
+      localStorage.setItem('refreshToken', refreshToken);
+
+      // 로그인 성공 후 navigate를 사용하여 경로 이동
+      navigate('/home'); // 대시보드 페이지로 이동
     } catch (error) {
-      console.error('Login failed', error);
-      setErrorMessage('로그인 중 오류가 발생하였습니다.');
+      // Axios 오류 처리
+      if (error.response) {
+        // 서버에서 응답이 반환된 경우
+        const { message } = error.response.data;
+        setErrorMessage(message || '로그인에 실패하였습니다.');
+      } else {
+        // 요청이 제대로 이루어지지 않은 경우
+        console.error('Login failed', error);
+        setErrorMessage('로그인 중 오류가 발생하였습니다.');
+      }
     }
   };
 

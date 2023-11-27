@@ -23,7 +23,7 @@ const App = () => {
         <Route path="/premium" element={<Premium />} />
         <Route path="/Setting" element={<Setting />} />
         <Route path="/artist" element={<Artist />} />
-        <Route path="/album" element={<Album />} />
+        <Route path="/album/:id" element={<Album />} /> {/* Updated line */}
       </Routes>
     </Router>
   );

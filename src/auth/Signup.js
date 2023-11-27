@@ -4,6 +4,8 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import googleIcon from '../images/google-icon.svg';
 import facebookIcon from '../images/facebook-icon.svg';
 import appleIcon from '../images/apple-icon.svg';
+import { useNavigate } from 'react-router-dom'; 
+import Api from '../Api'
 
 
 const Signup = () => {
@@ -15,35 +17,37 @@ const Signup = () => {
     const [name, setName] = useState('');
     const [showPassword, setShowPassword] = useState(false);
 
+    const navigate = useNavigate();
+
     const handleNext = () => setCurrentStep(current => current + 1);
     const handlePrev = () => setCurrentStep(current => current - 1);
     const togglePasswordVisibility = () => setShowPassword(!showPassword);
 
     const handleSignup = async () => {
         try {
-            const response = await fetch('/api/signup', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email,
-                    password,
-                    birth,
-                    gender,
-                    name,
-                }),
+            // Axios를 사용하여 회원가입 요청을 보냅니다.
+            const response = await Api.post('/auth/signup', {
+                email,
+                password,
+                birth,
+                gender,
+                name,
             });
-    
-            if (!response.ok) {
-                throw new Error('Signup failed');
-            }
-    
-            const responseData = await response.json();
-            console.log('Signup in successfully', responseData);
-            // 처리 로직 (예: 로그인 페이지로 이동)
+            // Axios의 응답은 자동으로 JSON 형태로 파싱됩니다.
+            const { accessToken, refreshToken } = response.data;
+            localStorage.setItem('accessToken', accessToken);
+            localStorage.setItem('refreshToken', refreshToken);
+
+            navigate('/home'); // 대시보드 페이지로 이동
         } catch (error) {
-            console.error('Signup failed', error);
+            // Axios 오류 처리
+            if (error.response) {
+                // 서버에서 응답이 반환된 경우
+                console.error('Signup failed', error.response.data);
+            } else {
+                // 요청이 제대로 이루어지지 않은 경우
+                console.error('Signup failed', error);
+            }
         }
     };
     
