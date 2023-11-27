@@ -1,0 +1,180 @@
+@charset "utf-8";
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.artist_cover{
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    background: url(/public/images/artist_cover.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 360px;
+}
+.artist_cover .artist_cover_fillter{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( to bottom, rgba(255, 255, 255, 0), rgba(52, 30, 32, 0.5) );
+    z-index: 2;
+}
+.artist_cover i{
+    position: relative;
+    display: block;
+    margin-top: 80px;
+    margin-left: 30px;
+    font-size: 22px;
+    z-index: 3;
+}
+.artist_cover h1{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 60px;
+    font-weight: 800;
+    z-index: 3;
+}
+.artist_info{
+    position: relative;
+    display: block;
+    padding: 20px;
+}
+.artist_top_menu_wrap::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient( to bottom, rgba(255, 0, 0, 0.125), rgba(250, 0, 21, 0.001) );
+    pointer-events: none;
+}
+.artist_top_menu_wrap .listen_people{
+    font-size: 11px;
+    color: rgb(191, 191, 191);
+}
+.artist_top_menu{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 0px;
+}
+.artist_follow{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.artist_follow button{
+    font-size: 11px;
+    font-weight: 700;
+    border: 1px solid rgb(167, 167, 167);
+    border-radius: 50px;
+    padding: 10px 20px;
+}
+.artist_follow img{
+    width: 28px;
+    margin-left: 28px;
+}
+.music_play{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.music_play .shuffle_btn{
+    width: 26px;
+    height: 30px;
+}
+.play_btn{
+    position: relative;
+    display: flex;
+    background-color: rgb(30, 215, 96);
+    border-radius: 50px;
+    padding: 27px;
+    margin-left: 23px;
+}
+.play_btn img{
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+}
+.artist_sub_menu{
+    position: relative;
+    display: block;
+    margin-top: 15px;
+}
+.artist_sub_menu ul{
+    position: relative;
+    display: flex;
+}
+.artist_sub_menu ul li p{
+    font-size: 15px;
+    color: rgb(155, 155, 155);
+    margin-right: 30px;
+    padding: 3px;
+}
+.music{
+    color: rgb(200, 200, 200) !important;
+    font-weight: 600;
+}
+.music::after{
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 35px;
+    height: 2.3px;
+    background-color: rgb(30, 215, 96);
+}
+.music_chart{
+    position: relative;
+    display: block;
+    margin-top: 45px;
+    margin-bottom: 100px;
+}
+.music_chart_title{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.music_chart_list{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+.music_chart_list .album_cover_img{
+    width: 55px;
+}
+.music_chart_list .music_number{
+    font-size: 11px;
+    margin-right: 20px;
+}
+
+.music_chart_list img{
+    margin-right: 15px;
+}
+.music_name{
+    color: rgb(229, 229, 229);
+}
+.listeners_number{
+    font-size: 11px;
+    color: rgb(166, 166, 166);
+    margin-top: 4px;
+}
+.music_chart_list img:last-child{
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    width: 25px;
+    margin-right: 0px;
+}

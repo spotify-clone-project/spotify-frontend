@@ -1,0 +1,111 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.album_cover{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 350px;
+    background: linear-gradient( to top, rgba(255, 255, 255, 0), rgba(80 , 95, 255) 60% );
+}
+.album_cover i{
+    position: absolute;
+    display: block;
+    top: 20%;
+    left: 20px;
+    font-size: 20px;
+    color: rgb(250, 250, 254);
+}
+.album_cover img{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 67%;
+}
+.album_info{
+    position: relative;
+    display: block;
+    padding: 0 20px;
+}
+.album_info h2{
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+}
+.artist_name{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.artist_name img{
+    width: 25px;
+    border-radius: 50px;
+    margin-right: 8px;
+}
+.artist_name p{
+    color: rgb(230, 230, 230);
+    font-weight: 700;
+    font-size: 11px;
+}
+.album_date{
+    font-size: 11px;
+    margin-top: 10px;
+    color: rgb(170, 170, 177);
+}
+.album_music_control{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+.album_music_add{
+    display: flex;
+    align-items: center;
+}
+.album_music_add_icon{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    border: 2px solid rgb(167, 167, 167);
+    margin-right: 30px;
+}
+.album_music_add_icon i{
+    color: rgb(167, 167, 167);
+}
+.album_music_list{
+    position: relative;
+    display: block;
+    padding: 20px;
+}
+.album_music{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.album_music_info{
+    position: relative;
+    display: block;
+}
+.album_music_info p:first-child{
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(230, 230, 230);
+}
+.album_artist{
+    font-size: 11px;
+    margin-top: 7px;
+    color: rgb(139, 139, 139);
+
+}

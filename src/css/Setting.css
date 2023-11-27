@@ -1,0 +1,116 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.setting_title_wrap{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: rgb(25, 25, 25);
+}
+.setting_title_wrap p{
+    margin-top: 15%;
+    font-size: 18px;
+    font-weight: 600;
+}
+.setting_title_wrap i{
+    position: relative;
+    display: block;
+    margin-top: 15%;
+}
+.setting_title{
+    position: relative;
+    display: flex;
+}
+.user_profile{
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+}
+.user_profile a{
+    position: relative;
+    display: flex;
+}
+.user_img{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(51, 51, 51);
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+}
+.user_img i{
+    font-size: 23px;
+}
+.user_info{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 15px;
+}
+.user_info p:first-child{
+    font-size: 15px;
+    font-weight: 500;
+}
+.user_info p:nth-child(2){
+    font-size: 12px;
+    margin-top: 5px;
+}
+.user_profile a .go_profile{
+    position: absolute;
+    display: flex;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: rgb(167, 167, 167);
+}
+.setting_menu{
+    position: relative;
+    display: block;
+}
+.setting_menu ul li{
+    position: relative;
+    display: block;
+    padding: 16px 15px;
+}
+.setting_menu ul li a{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.setting_menu ul li a p{
+    font-size: 14px;
+}
+.setting_menu ul li a i{
+    font-size: 20px;
+    color: rgb(167, 167, 167);
+}
+.logout_btn{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 230px;
+}
+.logout_btn a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logout_btn a button{
+    padding: 19px 32px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(18, 18, 18);
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 30px;
+}
