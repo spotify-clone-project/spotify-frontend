@@ -8,7 +8,6 @@
     position: relative;
     display:flex;
     flex-direction: column;
-    background: url(/public/images/artist_cover.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
