@@ -6,7 +6,7 @@ import MainFooter from './MainFooter';
 const Header = () => (
     <div className="title setting_title_wrap">
         <div className='setting_title'>
-            <i className="prev_btn fa-solid fa-chevron-left"/>
+            <i className="prev_btn fa-solid fa-chevron-left" />
             <p>설정</p>
         </div>
     </div>
@@ -123,6 +123,7 @@ const LogoutButton = () => (
 );
 
 const Setting = () => {
+
     return (
         <div className="wrap">
             <Header />
