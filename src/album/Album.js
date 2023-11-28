@@ -35,12 +35,28 @@ const Album = () => {
             <div className='album_info'>
                 <h2>{albumData.album.title}</h2>
                 <div className='artist_name'>
-                    <img src="/images/artist_cover.jpeg" alt={albumData.album.artist.name} />
-                    <p>{albumData.album.artist.name}</p>
+                    < a href={`/artist/${albumData.album.artist.id}`}>
+                        <img src="/images/artist_cover.jpeg" alt={albumData.album.artist.name} />
+                        <p>{albumData.album.artist.name}</p>
+                    </a>
                 </div>
                 <p className='album_date'>EP • {new Date(albumData.album.releaseDate).getFullYear()}</p>
             </div>
             {/* 나머지 컴포넌트 부분 */}
+            <div className='album_music_control'>
+                <div className='album_music_add'>
+                    <div className='album_music_add_icon'>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <img src="/images/menu-dots.png" alt="자세히보기" />
+                </div>
+                <div className='music_play'>
+                    <img src="/images/shuffle.png" alt="셔플" className='shuffle_btn' />
+                    <div className='play_btn'>
+                        <img src="/images/play-button.png" alt="플레이" />
+                    </div>
+                </div>
+            </div>
             <div className='album_music_list'>
                 {albumData.songs.map(song => (
                     <div className='album_music' key={song.id}>
