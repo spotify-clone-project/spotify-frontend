@@ -9,6 +9,7 @@ import Premium from './main/Premium';
 import Setting from './main/Setting';
 import Artist from './artist/Artist';
 import Album from './album/Album';
+import Music from './music/Music';
 
 
 const App = () => {
@@ -22,8 +23,9 @@ const App = () => {
         <Route path="/library" element={<Library />} />
         <Route path="/premium" element={<Premium />} />
         <Route path="/Setting" element={<Setting />} />
-        <Route path="/artist" element={<Artist />} />
+        <Route path="/artist/:id" element={<Artist />} />
         <Route path="/album/:id" element={<Album />} /> {/* Updated line */}
+        <Route path="/music" element={<Music />} />
       </Routes>
     </Router>
   );

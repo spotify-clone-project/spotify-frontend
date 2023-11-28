@@ -13,8 +13,8 @@ const HomeSection = ({ title, albums }) => (
         <li key={album.id}>
           <a href={`/album/${album.id}`}>
             <img src={album.coverImagePath} alt={album.title} />
-            <p>{album.title}</p>
-            <p>{album.artist.name}</p>
+            <p className='album_title_name'>{album.title}</p>
+            <p className='album_artist_name'>{album.artist.name}</p>
           </a>
         </li>
       ))}

@@ -139,10 +139,14 @@ body{
 }
 .home_section ul li{
     margin-right: 15px;
+    white-space: nowrap;
+    width: 170px;
 }
 .home_section ul li p{
     color: rgb(179, 178, 179);
-    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .home_section ul li img{
     width: 170px;
@@ -155,6 +159,15 @@ body{
 .home_section h2{
     color: #fff;
 }
+.album_title_name{
+    font-size: 11px !important;
+    margin-top: 7px;
+    color: rgb(255, 255, 255) !important;
+}
+.album_artist_name{
+    font-size: 11px !important;
+}
+
 .footer_menu ul{
     position: fixed;
     display: flex;
@@ -177,7 +190,30 @@ body{
     height: 60px;
     background: linear-gradient(to bottom, transparent, #121212);
 }
-
+.current_music{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
+    height: 70px;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    background-color: rgb(35, 43, 76);
+    border-radius: 10px;
+    z-index: 5;
+}
+.current_music .album_cover_img{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 5px;
+}
+.album_artist{
+    margin-top: 5px !important;
+    color: rgb(160, 170, 180) !important;
+}
 .footer_menu ul li a p{
     font-size: 12px;
     margin-top: 3px;
@@ -187,7 +223,30 @@ body{
     font-size: 25px;
     color: rgb(179, 178, 179);
 }
-
+.music_play_box{
+    position: absolute;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+.music_play_box img{
+    width: 30px;
+}
+.music_play_box i{
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    margin-left: 35px;
+}
+.play_line{
+    position: absolute;
+    width: 95%;
+    height: 2.5px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50px;
+    background-color:rgb(93, 112, 124) ;
+}
 /* ======search.html======== */
 .top_menu .title_txt{
     font-size: 23px;
